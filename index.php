@@ -79,11 +79,11 @@
         }
         $(()=>{
             loadPosts();
-            $("#detail").hide();
             $("#btnBack").click(() => {
-                $("#main").show();
-                $("#detail").hide();
                 $("#detail_title").remove();
+                $("#detail").hide();
+                $("#main").show();
+            $("#detail").hide();
             });
         })
     </script>
