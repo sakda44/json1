@@ -10,43 +10,36 @@
 
 </head>
 <body>
- 
     <table>
         <thead>
             <tr>
-                <th>ID</th><th>First Name</th><th>Last Name</th>
+                <th>ID</th><th>Title</th><th>Author</th>
             </tr>
         </thead>
-        <tbody id="tblStudent">
+        <tbody id="tblPosts">
+
         </tbody>
     </table>
+    
 </body>
 <script>
- 
-function loadJSON(){
-    var url = "https://cj-android-demon.herokuapp.com/json2.php";
+    function lodePosts(){
+        var url = "https://jsonplaceholder.typicode.com/posts";
+        $.getJSON(url)
+                .done((data)=>{
+                    $.each(data, (k, item)=>{
+                        console.log(item);
+                        var line = "<tr>";
+                            line += "<td>" + item.id + "</td>";
+                            line += "<td>" + item.title + "</td>";
+                            line += "<td>" + item.userId + "</td>";
+                            line += "</tr>";
+                        $("#tbnPosts").append(line);
+                    });
+                })
+                .fail((xhr, status, err)=>{
 
-     $.getJSON(url)
-        .done((data)=>{
-            console.log(data);
-            $.each(data,  (k, item)=>{
-                console.log(k);
-                console.log(item);
-                var line = "<tr>";
-                    line += "<td>" + (k+1) + "</td>";
-                    line += "<td>" + item.fname + "</td>";
-                    line += "<td>" + item.lname + "</td>";
-                    line += "</tr>";
-                $("#tblStudent").append(line);
-            });
-        })
-        .fail((xhr, status, err)=>{
-        });
-}
-$(()=>{
-    loadJSON();
-});
+                });
+    }
 </script>
-
-    
 </html>
