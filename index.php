@@ -37,15 +37,16 @@
 </body>
 <script>
     function showDetails(id){
-        $("#main").hide();
-        $("#detail").show();
-        var url = "https://jsonplaceholder.typicode.com/posts/"+id;
-        $.getJSON(url)
-            .done((data)=>{
-                console.log(data);
-            })
-            .fail((xhr, status, error)=>{
-            })
+            $("#main").hide();
+            $("#detail").show();
+            var url = "https://jsonplaceholder.typicode.com/posts/"+id;
+            $.getJSON(url)
+                .done((data)=>{
+                    console.log(data);
+                    $("#tbldetail").append(line);
+                })
+                .fail((xhr, status, error)=>{
+                })
     }
     function loadPosts(){
         $("#main").show();
