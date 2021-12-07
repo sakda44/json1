@@ -26,7 +26,7 @@
         <table>
             <thead>
                 <tr>
-                    <th>ID</th> <th>Title</th><th> Author </th>
+                    <th>ID</th> <th>Title</th><th>Author</th>
                 </tr>
             </thead>
             <tbody id="tbldetail">
@@ -47,7 +47,7 @@
                         line += "><td>" + data.id + "</td>"
                         line += "<td><b>" + data.title + "</b><br/>"
                         line += data.body + "</td>"
-                        line += "<td>" + data.author + "</td>"
+                        line += "<td>" + data.userId + "</td>"
                         line += "</tr>";
                         $("#tbldetail").append(line);
                 })
