@@ -73,7 +73,6 @@
                         $("#tblPosts").append(line);
                     });
                     $("#main").show();
-                    $("#btnBack").hide();
                 })
                 .fail((xhr, status, error)=>{
                 })
