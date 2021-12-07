@@ -42,15 +42,14 @@
             var url = "https://jsonplaceholder.typicode.com/posts/"+id
             $.getJSON(url)
                 .done((data)=>{
-                    console.log(data);
-                    
+                    console.log(data);                    
                     var line = "<tr id='detailROW'";
                         line += "><td>" + data.id + "</td>"
                         line += "<td><b>" + data.title + "</b><br/>"
                         line += data.body + "</td>"
                         line += "<td>" + data.detial + "</td>"
                         line += "</tr>";
-                        $("#tblDetail").append(line);
+                        $("#tbldetail").append(line);
                 })
                 .fail((xhr, err, status) => {
 
@@ -80,11 +79,8 @@
         }
         $(()=>{
             loadPosts();
-            $("#detail").hide();
-            $("#btnBack").click(() => {
+            $("#btnBack").click(()=>{
                 $("#main").show();
-                $("#detail").hide();
-                $("#detailROW").remove();
             });
         })
     </script>
