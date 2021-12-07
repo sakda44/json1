@@ -43,7 +43,7 @@
             $.getJSON(url)
                 .done((data)=>{
                     console.log(data);                    
-                    var line = "<tr id='detailROW'";
+                    var line = "<tr id='detail_title'";
                         line += "><td>" + data.id + "</td>"
                         line += "<td><b>" + data.title + "</b><br/>"
                         line += data.body + "</td>"
@@ -79,8 +79,11 @@
         }
         $(()=>{
             loadPosts();
-            $("#btnBack").click(()=>{
-                $("#main").show();
+            $("#detail").hide();
+            $("#btnBack").click(() => {
+                $("#main").hide();
+                $("#detail").hide();
+                $("#detail_title").remove();
             });
         })
     </script>
