@@ -13,6 +13,7 @@
     <button id="btnJSON1">JSON 1</button>
     Name : <span id="fname"></span><br/>
     SName : <span id="lname"></span>
+</body>
     <script>
         function loadJSON(){
             var url = "https://cj-android-demon.herokuapp.com/json1.php";
@@ -30,5 +31,4 @@
         });
     </script>
     
-</body>
 </html>
