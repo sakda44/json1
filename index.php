@@ -16,14 +16,14 @@
     <script>
         function loadJSON(){
             var url = "https://cj-android-demon.herokuapp.com/json1.php";
-            $.get(url, (data, status)=>{
-                console.log(data);
-                var jData = JSON.parse(data);
-                console.log(jData.fname);
-                console.log(jData.lname);
-                $("#name").text(jData.fname);
-                $("#name").text(jData.lname);
-            });
+            $.getJSON(url)
+                .done((data)=>{
+                    console.log(data);
+                    $("#fname").text(data.fname);
+                })
+                .fail((xhr, status, err)=>{
+
+                });
         }
         $(()=>{
             $("btnJSON1").click(loadJSON);
