@@ -80,8 +80,11 @@
         }
         $(()=>{
             loadPosts();
-            $("#btnBack").click(()=>{
+            $("#detail").hide();
+            $("#btnBack").click(() => {
                 $("#main").show();
+                $("#detail").hide();
+                $("#detailROW").remove();
             });
         })
     </script>
