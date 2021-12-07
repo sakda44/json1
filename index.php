@@ -23,7 +23,15 @@
     </table>
 </div>
 <div id="detail">
-    
+    <table>
+            <thead>
+                <tr>
+                    <th>ID</th> <th>Title</th><th> Details </th>
+                </tr>
+            </thead>
+            <tbody id="tbldetail">
+            </tbody>
+        </table>
 </div>
     
 </body>
