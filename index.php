@@ -11,6 +11,8 @@
 </head>
 <body>
     <button id="btnJSON1">JSON 1</button>
+    Name : <span id="fname"></span><br/>
+    SName : <span id="lname"></span>
     <script>
         function loadJSON(){
             var url = "https://cj-android-demon.herokuapp.com/json1.php";
@@ -19,6 +21,8 @@
                 var jData = JSON.parse(data);
                 console.log(jData.fname);
                 console.log(jData.lname);
+                $("#name").text(jData.fname);
+                $("#name").text(jData.lname);
             });
         }
         $(()=>{
