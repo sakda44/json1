@@ -15,7 +15,7 @@
         <table>
             <thead>
                 <tr>
-                    <th>ID</th> <th>Title</th><th> Details </th>
+                    <th>ID</th> <th>Title</th><th> Author </th>
                 </tr>
             </thead>
             <tbody id="tblPosts">
@@ -43,10 +43,17 @@
             $.getJSON(url)
                 .done((data)=>{
                     console.log(data);
-                    $("#tbldetail").append(line);
-                    $("#detail").show();
+                    
+                    var line = "<tr id='detailROW'";
+                        line += "><td>" + data.id + "</td>"
+                        line += "<td><b>" + data.title + "</b><br/>"
+                        line += data.body + "</td>"
+                        line += "<td>" + data.detial + "</td>"
+                        line += "</tr>";
+                        $("#tblDetail").append(line);
                 })
-                .fail((xhr, status, error)=>{
+                .fail((xhr, err, status) => {
+
                 })
         }
         function loadPosts(){
